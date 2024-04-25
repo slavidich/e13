@@ -7,20 +7,47 @@
     "prod": "webpack-dev-server  --node-env=production",
     "dev": "webpack-dev-server",
     "clear": "rd /s /q dist",
-    "webpack-prod": "webpack --node-env=production"
+    "webpack-prod": "webpack --node-env=production",
+    "lint": "eslint ./src",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.1.1",
     "css-loader": "^7.1.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "globals": "^15.0.0",
     "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.11",
     "json-server": "^1.0.0-alpha.23",
+    "lint-staged": "^15.2.2",
     "mini-css-extract-plugin": "^2.9.0",
+    "prettier": "^3.2.5",
     "style-loader": "^4.0.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ],
+    "*.js,html": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
