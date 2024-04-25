@@ -12,5 +12,10 @@ const compat = new FlatCompat({ baseDirectory: __dirname, recommendedConfig: plu
 
 export default [
   { languageOptions: { globals: globals.browser } },
-  ...compat.extends('standard')
+  ...compat.extends('standard'),
+  {
+    rules: {
+        "semi": [1, "always"]
+    }
+  }
 ]

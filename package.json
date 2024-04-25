@@ -46,7 +46,7 @@
     "*.js": [
       "eslint"
     ],
-    "*.js,html": [
+    "*.{js,html}": [
       "prettier --write --ignore-unknown"
     ]
   }
